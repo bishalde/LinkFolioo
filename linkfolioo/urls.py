@@ -19,10 +19,11 @@ from django.conf import settings
 from django.urls import path
 from linkfolioo import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home,name='home'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('',views.home,name='homepage'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
